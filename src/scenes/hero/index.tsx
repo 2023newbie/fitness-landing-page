@@ -17,9 +17,8 @@ const Hero = ({ setSelectedPage }: Props) => {
   const isAboveMediumScreen = useMediaQuery("(min-width: 1060px)");
 
   return (
-    <>
+    <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Home)} id="home">
       <section
-        id="home"
         className="container flex flex-col items-center justify-between py-20 md:h-2/3 md:flex-row md:py-8"
       >
         <div className="relative md:w-2/5">
@@ -52,7 +51,7 @@ const Hero = ({ setSelectedPage }: Props) => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.8 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 }
@@ -75,7 +74,7 @@ const Hero = ({ setSelectedPage }: Props) => {
       </section>
 
       {isAboveMediumScreen && (
-        <section className="h-28 w-full bg-primary-300">
+        <section className="h-28 w-full bg-primary-100 mb-2">
           <div className="container flex h-28 items-center gap-8">
             <img className="w-36" src={SponsorRedBull} alt="sponsor red bull" />
             <img className="w-36" src={SponsorFortune} alt="sponsor fortune" />
@@ -83,7 +82,7 @@ const Hero = ({ setSelectedPage }: Props) => {
           </div>
         </section>
       )}
-    </>
+    </motion.div>
   );
 };
 

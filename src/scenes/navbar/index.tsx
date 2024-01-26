@@ -22,7 +22,7 @@ const Navbar = ({
 
   return (
     <nav
-      className={`fixed top-0 z-20 w-full py-3 transition ${isScreenTop ? "" : "bg-primary-100 drop-shadow"}`}
+      className={`fixed top-0 z-30 w-full py-3 transition ${isScreenTop ? "" : "bg-primary-100 drop-shadow"}`}
     >
       <div className={`${flexBetween} mx-auto w-5/6 max-w-6xl gap-16`}>
         {/* LEFT SIDE */}
@@ -106,17 +106,6 @@ const Navbar = ({
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
-            </div>
-
-            <div className="flex flex-col gap-8">
-              <Link
-                page="Sign In"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
-              <ActionButton setSelectedPage={setSelectedPage}>
-                Become a Member
-              </ActionButton>
             </div>
           </div>
         )}
